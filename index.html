@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>beadando2019</title>
+		<link id="pagestyle" rel="stylesheet" type="text/css" href="green.css">
+		<script type= "text/javascript">
+			var bodyText=["A dúsításra nem minden esetben van szükség - a talaj magában is megfelelő minőségű lehet, de előfordulhat, hogy a gyengébb minőségű talajba kifejezetten ilyen körülményekhez szokott fajtákat ültetünk.",
+			"A talaj minősége talajdúsítással javítható, ami jótékony hatású anyagok hozzáadását jelenti a natív talajhoz. A hozzáadott anyagok között lehet például a komposzt, tőzeg, homok, ásványi por vagy trágya, amelyeket az ideális mélységben kevernek el a natív talajjal. A hozzáadott anyagok mennyisége és minősége több tényezőn múlhat, ideértve a talajban található humusz mennyiségét, a talajszerkezetet, a talaj pH-értékét és az ültetni kívánt növények milyenségét.",
+			"A kert talaja befolyásolja a víz és tápanyagok hozzáférhetőségét, a mikroorganizmusok viselkedését, a gyökereknél mérhető hőmérsékletet, így meghatározó hatással van arra, hogy a kertben milyen növények növeszthetőek sikeresen. A nem megfelelő minőségű, típusú talaj ugyanakkor szükség esetén lecserélhető.",
+			"Hogy hol található a kert, komolyan befolyásolhatja azt is, hogyan tervezhető. A topográfiai tulajdonságok, mint a lejtők, dombok, sík terepek stb. segíthetnek a terv bizonyos elemei, így például a megjelenés elkészítésében, de meg is határozhatják azt. A helyszín talaja meghatározza, milyen növények telepíthetőek a kertbe, ahogyan a klíma és a különféle mikroklímák is. A kert környezeti kontextusa szintén befolyásolhatja a tervezést, a városi vagy vidéki környezetben, szeles partvidéki területen vagy védett helyen kialakított kertek például nagyban eltérhetnek egymástól.", "</p><p>", "Akár szakember, akár amatőr tervez meg egy kertet, a tervek alapját bizonyos alapelvek határozzák meg.",
+			"<h2>Alcím</h2><p>A tervezés során figyelembe kell venni azt is, hogyan használják majd a kertet, milyen stílusú kertre van igény, és hogy a kert hogyan fog csatlakozni a házhoz és más környékbeli építményekhez."]
+			function generateText(sentenceCount){
+				for (var i=0; i<sentenceCount; i++)
+				document.write(bodyText[Math.floor(Math.random()*7)]+" ")
+			}
+			function swapStyleSheet(sheet){
+				document.getElementById('pagestyle').setAttribute('href', sheet);
+			}	
+		
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<header id="header">
+				<div id="header-inner">	
+					<div id="logo">
+						<h1><a href="#">Cégünk<span>Logója</span><p id="ido"></p></a></h1>
+					</div>
+					<div id="top-nav">
+						<ul>
+						<li><a href="#">Főoldal</a></li>
+						<li><a href="#">Rólunk</a></li>
+						<li><a href="#">Kapcsolat</a></li>
+						<li><a href="login.php" target="_blank">Belépés/Regisztráció</a></li>
+						</ul>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</header>
+			<div class="feature">
+				<div class="feature-inner">
+				<h1 id="focim">Kertművész Kft.</h1>
+				</div>
+			</div>
+		
+	
+			<div id="content">
+				<div id="content-inner">
+				
+					<main id="contentbar">
+						<div class="article">
+							<p><script>generateText(12)</script></p>
+						</div>
+					</main>
+					
+					<nav id="sidebar">
+						<div class="widget">
+							<h3>Bal oldali sáv</h3>
+							<ul>
+							<li><button onclick="swapStyleSheet('red.css')">Piros stílus</button></li>
+							<li><button onclick="swapStyleSheet('green.css')">Zöld stílus</button></li>
+							<li><button id="my_button">Start AJAX</button></li>
+							<li><div id="divajax">szöveg</div></li>
+							<li><button id="jq_button">Start jquery</button></li>
+							</ul>
+						</div>
+					</nav>
+					
+					<div class="clr"></div>
+				</div>
+			</div>
+		
+			<div id="footerblurb">
+				<div id="footerblurb-inner">
+				
+					<div class="column">
+						<h2><span>Alcím</span></h2>
+						<p><script>generateText(2)</script></p>
+					</div>	
+					<div class="column">
+						<h2><span>Alcím</span></h2>
+						<p><script>generateText(2)</script></p>
+					</div>
+					<div class="column">
+						<h2><span>Alcím</span></h2>
+						<p><script>generateText(2)</script></p>
+					</div>	
+					
+					<div class="clr"></div>
+				</div>
+			</div>
+			<footer id="footer">
+				<div id="footer-inner">
+					<p>&copy; Copyright <a href="#">Your Site</a> &#124; <a href="#">Terms of Use</a> &#124; <a href="#">Privacy Policy</a></p>
+					<div class="clr"></div>
+				</div>
+			</footer>
+		</div>
+		<script type= "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+		
+		function loadDoc() {
+  		var xhttp;
+  		if (window.XMLHttpRequest) {
+    
+    	xhttp = new XMLHttpRequest();
+  		} else {
+    
+    	xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  		}
+  	xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("divajax").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajaxproxy.php", true);
+  xhttp.send();
+}
+$(document).ready(function(){
+	$("#jq_button").click(function()
+	{
+	$("#focim").hide(2000);
+	});
+}
+		</script>
+	</body>
+</html>
